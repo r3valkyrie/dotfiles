@@ -1,0 +1,43 @@
+#Dirs
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.ncmpcpp/lyrics/
+mpd_host = "/tmp/mpd.socket"
+mpd_music_dir = /home/valkyrie/malygos/music
+mpd_crossfade_time = 6
+
+# Visibility
+statusbar_visibility = "no"
+header_visibility = "yes"
+titles_visibility = "yes"
+
+# Misc
+display_bitrate = "yes"
+
+
+# Visualizer
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_look = "º|"
+visualizer_type = spectrum
+visualizer_output_name = visualizer
+visualizer_sync_interval = 10
+visualizer_color = yellow
+autocenter_mode = "yes"
+
+# Colors
+colors_enabled = "yes"
+empty_tag_color = "red"
+state_line_color = "black"
+state_flags_color = "green"
+main_window_color = "green" 
+header_window_color = "blue"
+
+# Formats
+alternative_header_first_line_format = ""
+alternative_header_second_line_format = "{%a - %t}|{%f}"
+song_columns_list_format = "(50)[white]{t|f:Title} (20)[cyan]{a} (7f)[magenta]{l}"
+# Plugins
+playlist_plugin {
+    name "m3u"
+    enabled "true"
+}
+
