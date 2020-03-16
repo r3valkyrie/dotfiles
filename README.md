@@ -1,6 +1,6 @@
 # Dotfiles
 
-##Installation
+## Installation
 ```bash
 $ git clone https://github.com/r3valkyrie/dotfiles ~/.dotfiles
 $ cd ~/.dotfiles/
