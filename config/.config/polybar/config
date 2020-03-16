@@ -1,0 +1,25 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/valkyrie/.config/polybar/master.conf
+include-file = /home/valkyrie/.config/polybar/modules.conf
+
+
+;=====================================================
+;     Openbox Bars
+;=====================================================
+
+[bar/openbox-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = ${env:MONITOR}
+
+modules-left   = jgmenu mpd
+modules-center = 
+modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume clock}
+
+
+module-margin= 3

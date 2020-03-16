@@ -1,0 +1,32 @@
+# compton
+picom -b &
+
+# Window management
+quicktile --daemonize &
+
+# enable numlock, commented out for laptop users
+# numlockx &
+
+# set random wallpaper
+# wpg -r
+
+# restore previous wallpaper
+$HOME/.config/wpg/wp_init.sh &
+
+# required for xfce settings to work
+xfsettingsd &
+
+# fancy window switcher
+# skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+
+# start the panel
+/home/valkyrie/.bin/launch_polybar.sh &
+# xfce4-panel 
+# start redshift
+redshift &
+
+# start tint2
+# tint2 &
+
+# start conky
+# al-conky-session --autostart &

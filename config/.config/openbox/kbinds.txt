@@ -1,0 +1,61 @@
+o W-1             	GoToDesktop
+x W-w             	rofi -combi-modi window,drun -show combi -modi combi
+o W-h             	DirectionalFocusWest
+o W-l             	DirectionalFocusEast
+o W-k             	DirectionalFocusNorth
+o W-j             	DirectionalFocusSouth
+x C-Print         	scrot -s
+o A-Tab           	NextWindow
+o W-2             	GoToDesktop
+o W-3             	GoToDesktop
+o W-4             	GoToDesktop
+o S-W-1           	SendToDesktop
+o S-W-2           	SendToDesktop
+o S-W-3           	SendToDesktop
+o S-W-4           	SendToDesktop
+x XF86AudioRaiseVolume	pamixer -i 2
+x XF86AudioLowerVolume	pamixer -d 2
+x XF86AudioMute   	pamixer -t
+x XF86AudioStop   	playerctl stop
+x XF86AudioPlay   	playerctl play-pause
+x XF86AudioPrev   	playerctl previous
+x XF86AudioNext   	playerctl next
+x XF86MonBrightnessUp	xbacklight +10
+x XF86MonBrightnessDown	xbacklight -10
+x Print           	scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'
+x A-Print         	scrot -d 5 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'
+x W-Return        	exo-open /usr/share/applications/urxvt.desktop
+x W-e             	wpg -m
+x W-m             	rtile --cycle-monitors
+x W-v             	pavucontrol
+o W-s             	Iconify
+x W-x             	rtile --swap
+o W-S-Escape      	Exit
+x W-d             	rofi -show drun
+o C-S-BackSpace   	Restart
+o C-S-Return      	Reconfigure
+x W-Escape        	xkill
+o A-F4            	Close
+o A-F5            	Iconify
+o W-f             	ToggleMaximize
+o A-F8            	ToggleDecorations
+o S-W-d           	ToggleShowDesktop
+x W-a             	rtile --all
+o W-b             	ToggleDecorations
+o W-q             	Close
+o W-KP_1          	UnmaximizeFull
+o W-KP_2          	UnmaximizeFull
+o W-KP_3          	UnmaximizeFull
+o W-KP_4          	UnmaximizeFull
+o W-KP_5          	MaximizeFull
+o W-KP_6          	UnmaximizeFull
+o W-KP_7          	UnmaximizeFull
+o W-KP_8          	UnmaximizeFull
+o W-KP_9          	UnmaximizeFull
+o W-Right         	UnmaximizeFull
+o W-Left          	UnmaximizeFull
+o W-Up            	MaximizeFull
+o W-Down          	UnmaximizeFull
+o W-A-Left        	UnmaximizeFull
+o W-A-Right       	UnmaximizeFull
+x W-c             	rtile --cycle
