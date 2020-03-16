@@ -1,0 +1,75 @@
+# General aliases
+alias vi="nvim"
+alias rip="youtube-dl --extract-audio --audio-format mp3"
+alias weather="curl wttr.in" # Check weather with wttr.in
+alias s="source" # I prefer this over '.'
+alias py="python"
+alias open="nautilus"
+alias irc="irssi"
+alias epub="epr"
+alias mpc="mpc --host=/tmp/mpd.socket"
+alias firefox=ff
+alias ff="firefox-developer-edition"
+alias gimme="echo \"Yes, m'lord.\"; sudo pacman -S"
+alias zathura='$HOME/.bin/zathura'
+
+# Docker aliases
+alias dockershell="docker run --rm -it --entrypoint=/bin/bash"
+alias dockershellsh="docker run --rm -it --entrypoint/bin/sh"
+
+# Make directory and cd into it
+cdir() {
+     mkdir -p "$1"; cd "$1";
+}
+
+# ~/.bin aliases
+if [ -d ~/.bin ]; then
+    for binfile in $HOME/.bin/*.py; do
+    	alias $(basename $binfile .py)="python3 $binfile" # Shave off the .py extension from my python scripts and create an alias
+    done;
+fi;
+
+# Tmux aliases
+alias t='tmux attach || tmux new-session' # Attach to last session, create a new session if it doesn't exist.
+alias ta='tmux attach -t' # Attach to a session.
+alias tn='tmux new-session' # Create a new session.
+alias tls='tmux list-sessions' # List sessions.
+alias trs='tmux rename-session' # Change window title.
+alias tks='tmux kill-session -t' # Kill a session
+alias tka='rm /tmp/.init && tmux kill-server' # Kill all tmux sessions.
+
+# ls aliases
+alias ls='ls --color=auto' # Colorize ls output
+alias grep='grep --color' # Same with grep
+alias ll='ls -la' # Use long listing format
+alias l.='ls -d .* --color=auto' # Show only hidden files
+
+# Activate poor man's vpn
+alias hideme="sshuttle -r r3valkyrie.com 0.0.0.0/0"
+
+# Change ownership of files
+alias take="sudo chown -R $(whoami):"
+
+# Browsersync alias
+alias bsync="browser-sync start -s -f . --no-notify --host localhost --port 9000"
+
+
+# Git aliases
+alias gg="git grep --color"
+alias gs="git status"
+alias gsi="git status -uno"
+alias ga="git add"
+alias grm="git rm"
+alias gc="git commit -v"
+alias gb="git branch"
+alias gp="git pull"
+alias gr="git reset --hard HEAD"
+alias gco="git checkout"
+alias gpm="git push origin master"
+
+# GPG aliases
+alias gpgk="gpg --recv-keys" # Import gpg key
+alias akf="sudo apt-key adv --fetch-keys" # Fetch keys from remote server
+
+# Record middle screen
+alias rec="ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+1920,0 desktop.mp4"
