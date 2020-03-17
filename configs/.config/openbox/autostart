@@ -13,9 +13,6 @@ quicktile --daemonize &
 # restore previous wallpaper
 $HOME/.config/wpg/wp_init.sh &
 
-# required for xfce settings to work
-xfsettingsd &
-
 # fancy window switcher
 # skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
@@ -30,3 +27,6 @@ redshift &
 
 # start conky
 # al-conky-session --autostart &
+
+xfsettingsd &
+
