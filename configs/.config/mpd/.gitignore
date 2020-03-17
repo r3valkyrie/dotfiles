@@ -1,4 +1,4 @@
-/state
-/mpd.log
-/pid
-/sticker
+/*
+!/available
+!/mpd.conf
+!/playlists
