@@ -15,6 +15,11 @@ with open('/home/valkyrie/.newsapi', 'r') as key:
         title = response['articles'][0]['title']
         url = response['articles'][0]['url']
 
+        with open('/home/valkyrie/.config/polybar/scripts/news/news.url', 'w') as urlfile:
+            urlfile.write(url)
+            urlfile.close()
+
         print(source + ': ' + title)
+
     except Exception:
         raise Exception
