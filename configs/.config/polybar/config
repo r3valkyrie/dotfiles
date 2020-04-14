@@ -18,8 +18,8 @@ inherit = bar/master
 monitor = ${env:MONITOR}
 
 modules-left   = jgmenu mpd
-modules-center = 
-modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network volume clock}
+modules-center = news
+modules-right  = ${env:POLYBAR_MODULES:keyboard pkg network volume clock}
 
 
-module-margin= 3
+module-margin= 2

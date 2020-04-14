@@ -102,12 +102,12 @@
     <keybind key="W-o">
       <action name="ToggleShade"/>
     </keybind>
-    <keybind key="A-F1">
+    <keybind key="W-F1">
       <action name="Execute">
         <command>us_layout.sh</command>
       </action>
     </keybind>
-    <keybind key="A-F2">
+    <keybind key="W-F2">
       <action name="Execute">
         <command>fi_layout.sh</command>
       </action>
