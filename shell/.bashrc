@@ -119,13 +119,40 @@ if [ -d "$HOME/.asdf" ]; then
 fi
 
 # Apply pywal to ttys.
-source ~/.cache/wal/colors-tty.sh
-
-cat $HOME/.config/wpg/sequences
-
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-     . $HOME/.bin/init.sh;
-     exec tmux;
+if [ -d "$HOME/.cache/wal" ]; then
+    source ~/.cache/wal/colors-tty.sh
+    cat $HOME/.config/wpg/sequences
 fi
 
-command task
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    . $HOME/.bin/init.sh;
+    exec tmux;
+fi
+
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# command task
