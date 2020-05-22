@@ -10,4 +10,5 @@
 !/picom.conf
 !/quicktile.cfg
 !/user-dirs.dirs
+!/nvim/
 !/.gitignore
