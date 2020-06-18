@@ -48,8 +48,6 @@ elif ${isZsh}; then
     if [ -f "$HOME/.antigen.zsh" ]; then
         source $HOME/.antigen.zsh
     fi
-
-
 fi
 
 # Environment variables
@@ -74,7 +72,7 @@ elif ${isZsh}; then
 	zstyle ':vcs_info:git:*' formats 'on branch %b'
 	 
 	setopt PROMPT_SUBST
-	PROMPT='%n@${PWD/#$HOME/~} ${vcs_info_msg_0_}$ '
+	PROMPT='%n %F{yellow}${PWD/#$HOME/~}%F{red}${vcs_info_msg_0_/on branch / }%F{gray} $ %F{blue}'
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # Source fzf
 fi
 
