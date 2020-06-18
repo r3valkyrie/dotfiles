@@ -136,7 +136,6 @@ kb-row-tab: "";
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
-@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 * {
    

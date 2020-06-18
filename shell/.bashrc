@@ -39,21 +39,23 @@ elif ${isZsh}; then
     setopt nohup # Do not kill bg processes when closing the shell.
     setopt nocheckjobs # Do not warn about closing the shell with background jobs running.
     setopt interactivecomments # Allow comments on the command line.
+    setopt rcexpandparam
 
-    autoload -Uz compinit # Load completions
-    compinit
+    autoload -Uz vcs_info
+	precmd() { vcs_info }
 
-    source $HOME/.antigen.zsh
 
-    # Set prompt
-    autoload -U promptinit; promptinit
+    if [ -f "$HOME/.antigen.zsh" ]; then
+        source $HOME/.antigen.zsh
+    fi
+
+
 fi
 
-# Evironment variables
-export EDITOR="vim" # Use Vim as our default editor.
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2' # Color for zsh autosuggestions.
+# Environment variables
+export EDITOR="nvim" # Use Neovim as our default editor.
 
-# Theme
+# Prompt
 
 if ${isBash}; then
     case "$TERM" in
@@ -68,9 +70,11 @@ if ${isBash}; then
 
     [ -f ~/.fzf.bash ] && source ~/.fzf.bash # Source fzf
 
-elif ${isZsh}; then
-	prompt redhat
-
+elif ${isZsh}; then	
+	zstyle ':vcs_info:git:*' formats 'on branch %b'
+	 
+	setopt PROMPT_SUBST
+	PROMPT='%n@${PWD/#$HOME/~} ${vcs_info_msg_0_}$ '
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # Source fzf
 fi
 
@@ -107,9 +111,14 @@ if [ -d "$HOME/.rvm/bin" ]; then
 fi
 
 # node_modules
-export PATH="./node_modules/.bin:$PATH"
+# export PATH="./node_modules/.bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# yarn bin
+if [ -s "/usr/bin/yarn" ]; then
+    export PATH="$PATH:$(yarn global bin)"
+fi
 
 # asdf stuff
 if [ -d "$HOME/.asdf" ]; then
@@ -126,7 +135,7 @@ fi
 
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    . $HOME/.bin/init.sh;
+    bash $HOME/.bin/init.sh;
     exec tmux;
 fi
 
@@ -138,6 +147,7 @@ ex ()
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
       *.rar)       unrar x $1   ;;

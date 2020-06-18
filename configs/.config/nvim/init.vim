@@ -5,14 +5,13 @@ call vundle#begin()
 " Vundle plugins
 Plugin 'VundleVim/Vundle.vim'								" Required
 Plugin 'valloric/youcompleteme'								" Autocompletion
-Plugin 'crucerucalin/peaksea.vim'							" Color scheme
+Plugin 'arcticicestudio/nord-vim'							" Colors
 
 " Vundle plugins end
 call vundle#end()
 filetype plugin indent on
 
 " General configurations
-set termguicolors
 set exrc													" Allows project-based configuration.
 set secure
 set expandtab
@@ -31,7 +30,6 @@ set nobackup
 set nowb
 set noswapfile
 set number
-colorscheme peaksea
 highlight ColorColumn guibg=none
 
 " Remaps

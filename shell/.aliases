@@ -1,9 +1,12 @@
 # General aliases
 alias vi="nvim"
+alias vim="nvim"
 alias rip="youtube-dl --extract-audio --audio-format mp3"
 alias weather="curl wttr.in" # Check weather with wttr.in
 alias s="source" # I prefer this over '.'
 alias py="python"
+alias cp="cp -i"
+alias df="df -h"
 alias open="nautilus"
 alias irc="irssi"
 alias epub="epr"

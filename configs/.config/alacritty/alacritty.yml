@@ -34,13 +34,13 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 5
+    x: 0
     y: 0
 
   scale_with_dpi: false
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -91,6 +91,7 @@ window:
 
 # Font configuration
 font:
+  size: 10
   # Normal (roman) font face
   normal:
     # Font family
@@ -102,7 +103,7 @@ font:
     family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Normal
 
   # Bold font face
   bold:
@@ -137,9 +138,6 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
-  # Point size
-  size: 9
-
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
@@ -173,6 +171,34 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
+
+# Nord
+colors:
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+  cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+  normal:
+    black: '0x3B4252'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x88C0D0'
+    white: '0xE5E9F0'
+  bright:
+    black: '0x4C566A'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x8FBCBB'
+    white: '0xECEFF4'
+
 #colors:
   # Default colors
   #primary:
@@ -280,7 +306,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.882
+background_opacity: 1
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
